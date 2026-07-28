@@ -962,13 +962,29 @@ html.zh [lang="en"] *{display:none !important}
 
 <script>
 // Language switching
-function toggleLang(){
+function toggleLang(){applyLanguageVisibility();
   var h=document.documentElement;var on=h.classList.contains("zh");
   if(on){h.classList.remove("zh");document.getElementById("lang-en").classList.add("active");document.getElementById("lang-zh").classList.remove("active")}
   else{h.classList.add("zh");document.getElementById("lang-zh").classList.add("active");document.getElementById("lang-en").classList.remove("active")}
 }
+
+// Forcefully hide the non-selected language on load
+function applyLanguageVisibility() {
+  var isZh = document.documentElement.classList.contains("zh");
+  var allEls = document.querySelectorAll('[lang="en"],[lang="zh"]');
+  for(var i=0;i<allEls.length;i++){
+    var el=allEls[i];
+    if(el.getAttribute("lang")==="en"){el.style.display=isZh?"none":"inline"}
+    else if(el.getAttribute("lang")==="zh"){el.style.display=isZh?"inline":"none"}
+  }
+}
+// Also observe for dynamically added content
+if(window.MutationObserver){
+  var obs=new MutationObserver(applyLanguageVisibility);
+  obs.observe(document.body,{childList:true,subtree:true});
+}
 // Auto-detect browser language
-if(navigator.language&&navigator.language.indexOf("zh")===0){document.documentElement.className="zh";document.getElementById("lang-en")&&document.getElementById("lang-en").classList.remove("active");document.getElementById("lang-zh")&&document.getElementById("lang-zh").classList.add("active")}
+if(navigator.language&&navigator.language.indexOf("zh")===0){document.documentElement.className="zh";setTimeout(applyLanguageVisibility,50);document.getElementById("lang-en")&&document.getElementById("lang-en").classList.remove("active");document.getElementById("lang-zh")&&document.getElementById("lang-zh").classList.add("active")}
 document.getElementById("nda-date").valueAsDate = new Date();</script>
 </div></section></div>
 
