@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Alisa Chen — Product Management Portfolio</title>
+<meta name="description" content="Product management portfolio of Alisa Chen. 10+ years at Alibaba, Xiaohongshu, and Web3 startups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#fcfcf9;--bg-card:#fff;--bg-subtle:#f6f5f1;--line:#e8e6df;--text-1:#1a1c20;--text-2:#5b5a56;--text-3:#9c9a94;--accent:#1a3c6e;--accent-light:#2d5a9e;--accent-fg:#fff;--gold:#c8a85e;--gold-light:#e8d4a0;--radius:6px;--radius-lg:12px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-1);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-light)}
+.page{display:block}.page:not(#page-home){display:none}
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+.container-sm{max-width:800px;margin:0 auto;padding:0 28px}
+section{padding:80px 0}
+.section-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500}
+h2{font-size:2.2rem;font-weight:600;color:var(--text-1);margin-bottom:8px;letter-spacing:-.03em;line-height:1.2}
+h3{font-size:1.3rem;font-weight:600;color:var(--text-1);margin-bottom:8px}
+.subtitle{color:var(--text-2);font-size:1.05rem;max-width:600px;margin-bottom:40px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--radius);font-size:13px;font-weight:500;transition:all .2s;text-decoration:none;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:var(--accent-fg)}.btn-primary:hover{background:var(--accent-light);color:var(--accent-fg)}
+.btn-outline{background:transparent;color:var(--text-1);border:1px solid var(--line)}.btn-outline:hover{border-color:var(--text-1)}
+.btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:#b8974e;color:#fff}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.badge{background:var(--bg-subtle);color:var(--text-2);font-size:11px;padding:3px 10px;border-radius:4px;font-weight:450}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius);font-size:14px;font-family:inherit;background:var(--bg-card);color:var(--text-1);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(26,60,110,.1)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.legal-content{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:40px;margin-bottom:24px}
+.legal-content h3{font-size:1.1rem;margin-bottom:16px;margin-top:24px;color:var(--accent)}.legal-content h3:first-child{margin-top:0}
+.legal-content p{font-size:13px;color:var(--text-2);line-height:1.8;margin-bottom:12px}
+.signature-box{background:var(--bg-subtle);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:20px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-tag{display:inline-block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px;border:1px solid var(--gold-light);padding:4px 12px;border-radius:4px}
+.hero-title{font-size:3.2rem;font-weight:700;color:var(--text-1);letter-spacing:-.04em;line-height:1.1;margin-bottom:20px}.hero-title em{font-style:normal;color:var(--accent)}
+.hero-desc{font-size:1.05rem;color:var(--text-2);line-height:1.8;margin-bottom:32px;max-width:480px}
+.hero-cta-group{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:40px;box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.hero-card h3{font-size:1.1rem;font-weight:600;color:var(--accent);margin-bottom:16px}
+.hero-stat{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}.hero-stat:last-child{border-bottom:none}
+.hero-stat .num{font-weight:600;color:var(--text-1)}.hero-stat .label{color:var(--text-2)}
+#hero{padding-top:160px;padding-bottom:80px;background:linear-gradient(135deg,#fcfcf9 0%,#f3f0e8 100%);position:relative;overflow:hidden}
+#hero::before{content:"";position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(26,60,110,.04) 0%,transparent 70%);pointer-events:none}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;transition:box-shadow .2s,transform .2s}
+.service-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.06);transform:translateY(-2px)}
+.service-card .icon{font-size:1.8rem;margin-bottom:12px;display:block}
+.service-card h4{font-size:1rem;font-weight:600;color:var(--text-1);margin-bottom:8px}
+.service-card p{font-size:13px;color:var(--text-2);line-height:1.7}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.diff-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px}
+.diff-card .icon{font-size:1.5rem;margin-bottom:12px;display:block}
+.diff-card h4{font-size:1rem;font-weight:600;margin-bottom:8px}
+.diff-card p{font-size:13px;color:var(--text-2);line-height:1.7}
+.process-steps{position:relative;padding-left:40px}
+.process-steps::before{content:"";position:absolute;left:12px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.step{position:relative;padding-bottom:32px}.step:last-child{padding-bottom:0}
+.step-num{position:absolute;left:-40px;top:2px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
+.step h4{font-size:1rem;font-weight:600;margin-bottom:6px}.step p{font-size:13px;color:var(--text-2);line-height:1.7;max-width:500px}
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.case-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
+.case-card-img{height:160px;background:var(--bg-subtle);display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:2rem}
+.case-card-body{padding:24px}
+.case-card-body .tag{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.case-card-body h4{font-size:14px;font-weight:600;margin-bottom:6px}
+.case-card-body p{font-size:12px;color:var(--text-2);line-height:1.6}
+.advisor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.advisor-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;text-align:center}
+.advisor-avatar{width:60px;height:60px;border-radius:50%;background:var(--bg-subtle);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.advisor-card h4{font-size:14px;font-weight:600;margin-bottom:2px}
+.advisor-card .title{font-size:12px;color:var(--text-3);margin-bottom:8px}
+.advisor-card p{font-size:12px;color:var(--text-2);line-height:1.6}
+.partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.partner-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;transition:box-shadow .2s;display:flex;flex-direction:column;align-items:flex-start}
+.partner-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.partner-card .icon{font-size:2rem;margin-bottom:10px;display:block}
+.partner-card h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.partner-card .partner-type{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:6px}
+.partner-card p{font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:14px;flex:1}
+.partner-card .btn{font-size:12px;padding:8px 16px;margin-top:auto}
+.cta-section{background:var(--accent);color:var(--accent-fg);padding:80px 0}
+.cta-section h2{color:var(--accent-fg)}.cta-section .section-label{color:var(--gold-light)}
+.cta-section .subtitle{color:rgba(255,255,255,.7)}
+.cta-section .btn-primary{background:var(--accent-fg);color:var(--accent)}.cta-section .btn-primary:hover{background:var(--gold-light)}
+footer{border-top:1px solid var(--line);padding:40px 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand p{font-size:13px;color:var(--text-2);max-width:300px;margin-top:10px}
+.footer-col h5{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:12px}
+.footer-col a,.footer-col span{display:block;font-size:13px;color:var(--text-2);margin-bottom:6px}
+.footer-bottom{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--text-3);display:flex;justify-content:space-between}
+.page-title{padding-top:140px;padding-bottom:40px;background:linear-gradient(135deg,#fcfcf9 0%,#f3f0e8 100%)}
+.page-title h1{font-size:2.4rem;font-weight:700;letter-spacing:-.03em;margin-bottom:8px}.page-title p{color:var(--text-2);font-size:1rem;max-width:600px}
+.join-banner{background:var(--gold-light);border-radius:var(--radius-lg);padding:32px;text-align:center;margin-bottom:32px}
+.join-banner h3{color:var(--accent);margin-bottom:6px;font-size:1.1rem}.join-banner p{font-size:13px;color:var(--text-2);max-width:500px;margin:0 auto 16px}
+.checkbox-group{display:flex;flex-wrap:wrap;gap:8px}
+.checkbox-group label{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;color:var(--text-2)}
+.checkbox-group input[type=checkbox]{width:auto;accent-color:var(--accent)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(252,252,249,.92);backdrop-filter:blur(12px) saturate(80%);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:60px}
+.nav-logo{font-size:14px;font-weight:600;color:var(--accent);letter-spacing:.04em;cursor:pointer}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center}
+.nav-links a{font-size:13px;color:var(--text-2);font-weight:450;text-decoration:none;white-space:nowrap}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:var(--accent-fg)!important;padding:8px 18px;border-radius:var(--radius);font-size:12px!important;font-weight:500!important}
+.nav-cta:hover{background:var(--accent-light)!important}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-1)}
+@media(max-width:860px){
+.hero-grid,.diff-grid{grid-template-columns:1fr}.services-grid,.case-grid,.advisor-grid,.partner-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}
+.hero-title{font-size:2.4rem;max-width:100%}h2{font-size:1.8rem}
+.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 28px;gap:12px;border-bottom:1px solid var(--line);max-height:calc(100vh - 60px);overflow-y:auto}
+.nav-links.show{display:flex}.nav-toggle{display:block}
+}
+@media(max-width:500px){
+.container{padding:0 16px}
+#hero{padding-top:120px;padding-bottom:40px}
+.hero-title{font-size:1.7rem;letter-spacing:-0.02em}
+.hero-desc{font-size:0.9rem}
+.hero-card{padding:20px}
+.hero-card h3{font-size:0.95rem}
+.hero-stat{padding:8px 0;font-size:0.85rem}
+.hero-tag{font-size:10px;padding:3px 10px}
+.btn{padding:10px 20px;font-size:13px}
+.badge-row{flex-wrap:wrap;gap:6px}
+.badge{font-size:10px;padding:3px 10px}
+h2{font-size:1.4rem}
+.subtitle{font-size:0.85rem;margin-bottom:24px}
+section{padding:40px 0}
+.services-grid,.advisor-grid,.partner-grid,.footer-grid{grid-template-columns:1fr}
+.service-card{padding:20px}
+.service-card h4{font-size:0.9rem}
+.service-card p{font-size:12px}
+.service-card .icon{font-size:1.4rem;margin-bottom:8px}
+.case-card-body{padding:16px}
+.case-card-body h4{font-size:13px}
+.case-card-body p{font-size:11px}
+.advisor-grid{gap:12px}
+.partner-grid{gap:12px}
+.step{padding:16px 0}
+.step h4{font-size:0.9rem}
+.step p{font-size:12px}
+.footer-grid{grid-template-columns:1fr;gap:20px}
+.page-title h1{font-size:1.6rem}
+.page-title p{font-size:0.85rem}
+.legal-content{padding:20px}
+.lang-toggle{margin-left:6px}
+.lang-toggle span{padding:3px 8px;font-size:10px}
+.nav-links a{font-size:14px;padding:8px 0}
+}
+.lang-toggle{display:flex;align-items:center;gap:2px;background:var(--bg-subtle);border:1px solid var(--line);border-radius:20px;padding:3px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.04);margin-left:12px}
+.lang-toggle span{padding:4px 10px;border-radius:16px;font-size:11px;font-weight:500;transition:all .2s;cursor:pointer}
+.lang-toggle span.active{background:var(--accent);color:var(--accent-fg)}.lang-toggle span:not(.active){color:var(--text-2)}
+.lang-toggle span:not(.active):hover{color:var(--text-1)}
+.icon-svg{display:inline-block;vertical-align:middle;margin-bottom:8px}
+.icon-svg circle,.icon-svg path,.icon-svg rect,.icon-svg polygon,.icon-svg line{transition:stroke .3s,fill .3s}
+.service-card:hover .icon{opacity:0.8}
+</style>
+</head>
+<body>
+<div id="page-pm-portfolio" class="page">
+<div class="page-title" style="padding-top:140px;padding-bottom:60px;background:linear-gradient(135deg,#fcfcf9 0%,#f0ece0 100%);position:relative;overflow:hidden">
+<div class="container-sm" style="position:relative;z-index:1">
+<div class="badge-row">
+<span class="badge">PM @ 300M+ MAU</span>
+<span class="badge">VC → Builder</span>
+<span class="badge">Cross-Border</span>
+<span class="badge">AI • Web3 • E-Com</span>
+</div>
+<h1 style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;line-height:1.1;margin-bottom:16px">Alisa Chen</h1>
+<p style="font-size:1.2rem;color:var(--accent);font-weight:500;margin-bottom:8px">Product Manager &amp; Cross-Border Operator</p>
+<p style="font-size:1rem;color:var(--text-2);max-width:550px;line-height:1.8">From VC analyst to building products for 300M+ users across AI, Web3, and e-commerce. I bridge the gap between strategy and execution — on both sides of the Pacific.</p>
+<div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+<a href="#pm-projects" class="btn btn-primary" style="padding:12px 24px;font-size:13px">View Projects</a>
+<a href="#pm-contact" class="btn btn-outline" style="padding:12px 24px;font-size:13px">Get in Touch</a>
+</div>
+</div>
+</div>
+<div class="container"><section id="pm-projects">
+<div class="section-label">Selected Work</div>
+<h2>Products I've Built &amp; Scaled</h2>
+<p class="subtitle">Each project spans strategy, execution, and measurable outcomes. From 0-to-1 to scaling at 300M+ MAU.</p>
+<div class="case-grid">
+<div class="case-card">
+<div class="case-card-img" style="background:#e8e6df;color:var(--accent);font-size:2.5rem">&#x1F4CA;</div>
+<div class="case-card-body">
+<div class="tag">Growth PM • Ele.me (Alibaba)</div>
+<h4>Membership Growth Engine</h4>
+<p style="font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:10px">Led the membership and growth product vertical at Ele.me, Alibaba's food delivery platform serving 300M+ users. Designed and optimized the membership program driving retention and LTV.</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<span class="badge">Retention +22%</span>
+<span class="badge">Revenue +180% YoY</span>
+<span class="badge">300M+ MAU</span>
+</div>
+<p style="font-size:11px;color:var(--text-3);line-height:1.5">Owned subscription product roadmap, A/B tested pricing tiers (9.9/19.9/29.9 RMB/mo), optimized reward mechanics. Cross-functional team of 12 engineers, 3 designers, 2 data scientists.</p>
+</div></div>
+<div class="case-card">
+<div class="case-card-img" style="background:#e8e6df;color:var(--accent);font-size:2.5rem">&#x1F4F1;</div>
+<div class="case-card-body">
+<div class="tag">PM Lead • Xiaohongshu (RED)</div>
+<h4>Creator Marketplace &amp; Monetization</h4>
+<p style="font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:10px">Built the creator monetization platform for Xiaohongshu (RED), China's leading lifestyle platform with 300M+ MAU. Designed the brand-creator matching engine and transaction system.</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<span class="badge">GMV $500M+/yr</span>
+<span class="badge">100K+ Creators</span>
+<span class="badge">30K+ Brands</span>
+</div>
+<p style="font-size:11px;color:var(--text-3);line-height:1.5">From 0-to-1: defined creator tiering, pricing algorithms, campaign management dashboard, payment settlement. Scaled from pilot to full platform in 8 months.</p>
+</div></div>
+<div class="case-card">
+<div class="case-card-img" style="background:#e8e6df;color:var(--accent);font-size:2.5rem">&#x1F4B1;</div>
+<div class="case-card-body">
+<div class="tag">PM • Coins.ph</div>
+<h4>Web3 Wallet &amp; $50M Exit</h4>
+<p style="font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:10px">Led product for the crypto wallet and payments platform at the largest licensed crypto exchange in Southeast Asia. Product was later acquired in a $50M+ exit.</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<span class="badge">$50M Exit</span>
+<span class="badge">5M+ Wallet Users</span>
+<span class="badge">Licensed in 3 Markets</span>
+</div>
+<p style="font-size:11px;color:var(--text-3);line-height:1.5">Defined wallet product strategy, led crypto-to-fiat ramp integration, managed regulatory compliance features (KYC/AML), built remittance product connecting PH to global markets.</p>
+</div></div>
+<div class="case-card">
+<div class="case-card-img" style="background:#e8e6df;color:var(--accent);font-size:2.5rem">&#x1F916;</div>
+<div class="case-card-body">
+<div class="tag">Founder/PM • AI Ad SaaS</div>
+<h4>AI-Powered Ad Creative Platform</h4>
+<p style="font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:10px">Founded and built an AI-driven ad creative platform, generating personalized video ads at scale using generative AI. Grew from idea to $150K+ MRR.</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<span class="badge">$150K+ MRR</span>
+<span class="badge">500+ Clients</span>
+<span class="badge">AI Video Gen</span>
+</div>
+<p style="font-size:11px;color:var(--text-3);line-height:1.5">Single-handedly built MVP (React + Python), onboarded first 100 clients via cold outreach, hired 5-person team, managed full product lifecycle from ideation to churn reduction.</p>
+</div></div>
+<div class="case-card">
+<div class="case-card-img" style="background:#e8e6df;color:var(--accent);font-size:2.5rem">&#x1F30D;</div>
+<div class="case-card-body">
+<div class="tag">Product Lead • TikTok Shop</div>
+<h4>TikTok Shop SEA Market Launch</h4>
+<p style="font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:10px">Led product strategy for TikTok Shop's Southeast Asia market entry. Built the seller onboarding, live commerce tools, and cross-border logistics integration for the region.</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<span class="badge">SEA Launch</span>
+<span class="badge">$2B+ GMV</span>
+<span class="badge">Live Commerce</span>
+</div>
+<p style="font-size:11px;color:var(--text-3);line-height:1.5">Defined product-market fit for 5 SEA markets (ID, TH, VN, PH, MY), built local payment integrations, managed cross-border logistics flow, coordinated with 3 regulators.</p>
+</div></div>
+<div class="case-card">
+<div class="case-card-img" style="background:#e8e6df;color:var(--accent);font-size:2.5rem">&#x1F30E;</div>
+<div class="case-card-body">
+<div class="tag">Operator • Hsu's Ginseng</div>
+<h4>AI Sales &amp; US Market Entry</h4>
+<p style="font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:10px">Led digital transformation and US market entry for a traditional health brand. Built AI-powered sales tools, automated customer journey, and scaled online revenue.</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<span class="badge">$1M+/Quarter</span>
+<span class="badge">AI Sales Tools</span>
+<span class="badge">US Market Entry</span>
+</div>
+<p style="font-size:11px;color:var(--text-3);line-height:1.5">Built automated sales pipeline (HubSpot + custom AI), managed cross-border logistics from WI to global, hired and led a 3-person digital team, grew revenue 5x in 18 months.</p>
+</div></div>
+</div>
+</section></div>
+<div class="container"><section>
+<div class="section-label">Skills &amp; Toolkit</div>
+<h2>What I Bring</h2>
+<p class="subtitle">Product management at the intersection of AI, Web3, and cross-border markets.</p>
+<div class="services-grid">
+<div class="service-card"><h4>Product Strategy</h4><p>0-to-1 product launch, growth loops, retention mechanics, pricing strategy, A/B testing at scale. Led products across 8 markets and 3 continents.</p></div>
+<div class="service-card"><h4>Data &amp; Analytics</h4><p>SQL, Python, Looker, Amplitude, Mixpanel. A/B testing design, funnel analysis, cohort analysis, LTV modeling. Founder-level comfort with data.</p></div>
+<div class="service-card"><h4>Cross-Border Ops</h4><p>US-China market entry, regulatory navigation, localization, partner development. Fluent in English, Mandarin, and cross-cultural product design.</p></div>
+<div class="service-card"><h4>AI &amp; ML Products</h4><p>Built AI-powered ad creative platform, LLM-based sales tools, recommendation systems. Comfortable with prompt engineering, model evaluation, AI UX design.</p></div>
+<div class="service-card"><h4>Web3 &amp; Crypto</h4><p>Wallet product design, tokenomics, DeFi/CEX integration, regulatory compliance for crypto. Led product at licensed exchange through $50M+ exit.</p></div>
+<div class="service-card"><h4>Leadership &amp; Hiring</h4><p>Built and led teams of 3-12 across engineering, design, data. Recruited and managed distributed teams across US, China, and SEA.</p></div>
+</div>
+</section></div>
+<div class="container"><section>
+<div class="section-label">Career Timeline</div>
+<h2>Where I've Been</h2>
+<p class="subtitle">From VC analyst in Shanghai to building products for 300M+ users across the Pacific.</p>
+<div class="process-steps">
+<div class="step"><div class="step-num">1</div><h4>VC Analyst — Shanghai</h4><p style="font-size:12px;color:var(--text-3);margin-bottom:4px">Cross-border Tech VC | 2016-2018</p><p style="font-size:12px;color:var(--text-2);line-height:1.6">Sourced deals in AI, Web3, and consumer tech. Evaluated 200+ startups, led 12 investments across US-China cross-border deals. This is where I learned to spot product-market fit.</p></div>
+<div class="step"><div class="step-num">2</div><h4>Growth PM — Ele.me (Alibaba)</h4><p style="font-size:12px;color:var(--text-3);margin-bottom:4px">300M+ MAU Food Delivery Platform | 2018-2020</p><p style="font-size:12px;color:var(--text-2);line-height:1.6">Led membership and growth product. Designed subscription pricing, reward mechanics, and retention loops. Revenue grew 180% YoY under my product vertical.</p></div>
+<div class="step"><div class="step-num">3</div><h4>PM Lead — Xiaohongshu (RED)</h4><p style="font-size:12px;color:var(--text-3);margin-bottom:4px">300M+ MAU Lifestyle Platform | 2020-2022</p><p style="font-size:12px;color:var(--text-2);line-height:1.6">Built 0-to-1 creator monetization marketplace. Designed brand-creator matching engine, campaign management tools, and payment settlement. Scaled to $500M+ annual GMV.</p></div>
+<div class="step"><div class="step-num">4</div><h4>PM — Coins.ph</h4><p style="font-size:12px;color:var(--text-3);margin-bottom:4px">Licensed Crypto Exchange (SE Asia) | 2022-2023</p><p style="font-size:12px;color:var(--text-2);line-height:1.6">Led crypto wallet and payments product at the largest licensed exchange in SEA. Built crypto-to-fiat ramps, remittance product, and KYC/AML compliance features. $50M+ exit.</p></div>
+<div class="step"><div class="step-num">5</div><h4>Founder/PM — AI Ad SaaS</h4><p style="font-size:12px;color:var(--text-3);margin-bottom:4px">AI-Powered Ad Creative Platform | 2023-2024</p><p style="font-size:12px;color:var(--text-2);line-height:1.6">Founded and built MVP, onboarded first 100 clients, grew to $150K+ MRR. Hired and led a 5-person team. Built AI video generation pipeline and automated ad optimization.</p></div>
+<div class="step"><div class="step-num">6</div><h4>Product Lead — TikTok Shop SEA</h4><p style="font-size:12px;color:var(--text-3);margin-bottom:4px">Live Commerce in Southeast Asia | 2024-2025</p><p style="font-size:12px;color:var(--text-2);line-height:1.6">Led product strategy for TikTok Shop launch across 5 SEA markets. Built seller onboarding, live commerce tools, and cross-border logistics. $2B+ GMV in first year.</p></div>
+<div class="step"><div class="step-num">7</div><h4>Operating Partner — Sequoia Bridge</h4><p style="font-size:12px;color:var(--text-3);margin-bottom:4px">Cross-Border Advisory for AI Companies | 2025-Present</p><p style="font-size:12px;color:var(--text-2);line-height:1.6">Guiding AI-native companies from Pre-IPO prep through US market entry. Bridging the gap between the Sequoia Bridge ecosystem and the product execution needed to make it real.</p></div>
+</div>
+</section></div>
+<div id="pm-contact" style="padding:80px 0">
+<div class="container" style="text-align:center">
+<h2 style="margin-bottom:8px">Let's Build Something</h2>
+<p style="color:var(--text-2);margin-bottom:24px;max-width:450px;margin-left:auto;margin-right:auto">Looking for a product leader who can navigate both strategy and execution across borders?</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<a href="mailto:jchen822@hotmail.com" class="btn btn-primary" style="padding:14px 32px;font-size:14px;background:var(--accent);color:var(--accent-fg)">Email Me</a>
+</div>
+<p style="margin-top:16px;font-size:12px;color:var(--text-3)">Currently open to PM / Product Lead roles in AI, Web3, or cross-border tech. Based in Bay Area, open to NYC/remote.</p>
+</div>
+</div>
+</div>
+<script>
+// Language switching
+// Language toggle removed (English only)
+  else{h.classList.add("zh");document.getElementById("lang-zh").classList.add("active");document.getElementById("lang-en").classList.remove("active")}
+}
+// Forcefully hide the non-selected language on load
+function applyLanguageVisibility() {
+  var isZh = document.documentElement.classList.contains("zh");
+  var allEls = document.querySelectorAll('[lang="en"],[]');
+  for(var i=0;i<allEls.length;i++){
+    var el=allEls[i];
+    if(el.getAttribute("lang")==="en"){el.style.display=isZh?"none":"inline"}
+    else if(el.getAttribute("lang")==="zh"){el.style.display=isZh?"inline":"none"}
+  }
+}
+// Also observe for dynamically added content
+if(window.MutationObserver){
+  var obs=new MutationObserver(applyLanguageVisibility);
+  obs.observe(document.body,{childList:true,subtree:true});
+}
+// English only}
+document.getElementById("nda-date").valueAsDate = new Date();</script>
+</div></section></div>
+
+</body>
+</html>
