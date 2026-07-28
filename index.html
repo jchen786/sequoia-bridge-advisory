@@ -160,6 +160,10 @@ section{padding:40px 0}
 .lang-toggle span:not(.active):hover{color:var(--text-1)}
 html.zh [lang="en"]{display:none !important}html.zh [lang="zh"]{display:inline !important}
 html:not(.zh) [lang="zh"]{display:none !important}html:not(.zh) [lang="en"]{display:inline !important}
+html:not(.zh) [lang="zh"],
+html:not(.zh) [lang="zh"] *{display:none !important}
+html.zh [lang="en"],
+html.zh [lang="en"] *{display:none !important}
 
 .icon-svg{display:inline-block;vertical-align:middle;margin-bottom:8px}
 .icon-svg circle,.icon-svg path,.icon-svg rect,.icon-svg polygon,.icon-svg line{transition:stroke .3s,fill .3s}
