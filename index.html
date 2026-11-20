@@ -94,6 +94,7 @@ footer{border-top:1px solid var(--line);padding:40px 0}
 .footer-brand p{font-size:13px;color:var(--text-2);max-width:300px;margin-top:10px}
 .footer-col h5{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:12px}
 .footer-col a,.footer-col span{display:block;font-size:13px;color:var(--text-2);margin-bottom:6px}
+.footer-col h3 span{display:inline;font-size:inherit;margin:0;color:var(--gold)}
 .footer-bottom{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--text-3);display:flex;justify-content:space-between}
 .page-title{padding-top:140px;padding-bottom:40px;background:linear-gradient(135deg,#fcfcf9 0%,#f3f0e8 100%)}
 .page-title h1{font-size:2.4rem;font-weight:700;letter-spacing:-.03em;margin-bottom:8px}.page-title p{color:var(--text-2);font-size:1rem;max-width:600px}
@@ -108,14 +109,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(252,252,249,
 .nav-links{display:flex;gap:20px;list-style:none;align-items:center}
 .nav-links a{font-size:13px;color:var(--text-2);font-weight:450;text-decoration:none;white-space:nowrap}
 .nav-links a:hover{color:var(--accent)}
-.nav-cta{background:var(--accent);color:var(--accent-fg)!important;padding:8px 18px;border-radius:var(--radius);font-size:12px!important;font-weight:500!important}
-.nav-cta:hover{background:var(--accent-light)!important}
-.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-1)}
+.nav-inner{display:flex;align-items:center;width:100%;gap:18px;min-width:0}
+.nav-logo{white-space:nowrap;flex:0 0 auto}
+.nav-links{flex:1;min-width:0}
+.nav-cta{background:var(--accent);color:var(--accent-fg)!important;padding:8px 18px;border-radius:var(--radius);font-size:12px!important;font-weight:500!important;flex:0 0 auto;line-height:1.25;text-align:center;white-space:nowrap}
+.nav-cta .cta-break{display:none}
+.nav-cta:hover{background:var(--accent-light)!important;color:var(--accent-fg)!important}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-1);flex:0 0 auto;line-height:1;padding:0}
+.book-cta{text-align:center}
+.book-cta .subtitle{margin-left:auto;margin-right:auto}
+.hero-cta-group .btn{text-align:center}
 @media(max-width:860px){
 .hero-grid,.diff-grid{grid-template-columns:1fr}.services-grid,.case-grid,.advisor-grid,.partner-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}
 .hero-title{font-size:2.4rem;max-width:100%}h2{font-size:1.8rem}
 .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 28px;gap:12px;border-bottom:1px solid var(--line);max-height:calc(100vh - 60px);overflow-y:auto}
 .nav-links.show{display:flex}.nav-toggle{display:block}
+.nav-cta{white-space:normal;max-width:168px;padding:6px 10px;font-size:11px!important}
+.nav-cta .cta-break{display:block}
 }
 @media(max-width:500px){
 .container{padding:0 16px}
@@ -169,9 +179,16 @@ section{padding:40px 0}
 <meta property="og:description" content="From Shanghai to Silicon Valley — your bridge to the US market. Pre-IPO preparation, US market entry, ecosystem building for AI-native companies.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sequoiabridge.us/">
+<meta property="og:image" content="https://sequoiabridge.us/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sequoia Bridge — AI Native Cross-Border Advisory">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sequoia Bridge — AI Native Cross-Border Advisory">
 <meta name="twitter:description" content="From Shanghai to Silicon Valley — your bridge to the US market. Pre-IPO, US market entry, ecosystem building for AI-native companies.">
+<meta name="twitter:image" content="https://sequoiabridge.us/og-image.png">
+<meta name="twitter:image:alt" content="Sequoia Bridge — AI Native Cross-Border Advisory">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -195,15 +212,16 @@ section{padding:40px 0}
 </script>
 <nav>
 <div class="nav-inner">
-<a href="javascript:;" onclick="showHome();return false" style="font-weight:600;font-size:13px;letter-spacing:.08em">SEQUOIA <span style="color:var(--gold)">BRIDGE</span></a>
-<div class="nav-links">
-<a href="javascript:;" onclick="showPage('pm-portfolio');return false">Resume</a>
-<a href="#services" onclick="showHome()">Services</a>
-<a href="#about" onclick="showHome()">Team</a>
-<a href="#join" onclick="showHome()">Join</a>
-<a href="#contact" onclick="showHome()">Contact</a>
+<a class="nav-logo" href="#hero" onclick="closeMobileNav()">SEQUOIA <span>BRIDGE</span></a>
+<div class="nav-links" id="nav-links">
+<a href="/resume.html">Resume</a>
+<a href="#services" onclick="closeMobileNav()">Services</a>
+<a href="#about" onclick="closeMobileNav()">Team</a>
+<a href="#join" onclick="closeMobileNav()">Join</a>
+<a href="#book" onclick="closeMobileNav()">Contact</a>
 </div>
-<div class="nav-toggle" onclick="toggleMobileNav()">&#9776;</div>
+<a class="nav-cta js-book" href="#book">预约 30 分钟 /<br class="cta-break"> Book a 30-min call</a>
+<button class="nav-toggle" type="button" aria-label="Menu" onclick="toggleMobileNav()">&#9776;</button>
 </div>
 </nav>
 <div id="page-home" class="page">
@@ -211,7 +229,7 @@ section{padding:40px 0}
 <div class="hero-tag">Cross-Border Advisory for AI-Native Companies</div>
 <h1 class="hero-title">From <em>Shanghai</em> to <em>Silicon Valley</em> &mdash; Your Bridge to the US Market</h1>
 <p class="hero-desc">We help AI-native companies navigate the full journey from Pre-IPO preparation to US market entry &mdash; finding partners, customers, offices, factories, and the right ecosystem. Hardware and software, each on their own terms.</p>
-<div class="hero-cta-group"><a href="#contact" class="btn btn-primary">Schedule a consultation</a><a href="#services" class="btn btn-outline">How we work</a></div>
+<div class="hero-cta-group"><a class="btn btn-primary js-book" href="#book">预约 30 分钟 / Book a 30-min call</a><a href="#services" class="btn btn-outline">How we work</a></div>
 <div style="margin-top:24px"><div class="badge-row"><span class="badge">Pre-IPO Strategy</span><span class="badge">Cross-Border GTM</span><span class="badge">Ecosystem Building</span><span class="badge">Regulatory</span><span class="badge">Supply Chain</span><span class="badge">Go-to-Market</span></div></div>
 </div><div>
 <div class="hero-card"><h3>Why AI-native companies choose us</h3>
@@ -236,16 +254,17 @@ section{padding:40px 0}
 <div class="service-card"><span class="icon">&nbsp;</span><h4>Software Go-to-Market</h4><p>Sales motion, PLG vs enterprise strategy, channel strategy, SOC 2 / FedRAMP compliance, pricing & packaging.</p></div>
 <div class="service-card"><span class="icon">&nbsp;</span><h4>Regulatory & Compliance</h4><p>Entity formation, IP protection, trade compliance, CCPA, export controls, immigration, CFIUS navigation.</p></div>
 </div>
-</div><section style="background:var(--bg-subtle)"><div class="container">
+</div></section>
+<section style="background:var(--bg-subtle)"><div class="container">
 <div class="section-label">Industry Expertise</div>
 <h2>Hardware and software, each on their own terms.</h2>
-<p class="subtitle">We treat them differently because their paths to US man >，。</p>
+<p class="subtitle">We treat them differently because their paths to US market success are fundamentally different.</p>
 <div class="diff-grid">
-<div class="diff-card"><h4>Software Companies<gn, PLG playbooks, SOC 2 compliance, channel partner #1a3c6e" />n, pilot programs with Fortune 500, executive introductions, product demo localization.</p></div>
-<div class="diff-card"><h4>nd contract manufacturer vetting (US, Mexico, SE Asia), component sourcing, prototype-to-production pipeline, FCC/UL certifland and facility search, tariff strategy.</p></div>
+<div class="diff-card"><h4>Software Companies</h4><p>Enterprise sales motion design, PLG playbooks, SOC 2 compliance, channel partner recruitment, US pricing optimization, pilot programs with Fortune 500, executive introductions, product demo localization.</p></div>
+<div class="diff-card"><h4>Hardware Companies</h4><p>Factory and contract manufacturer vetting (US, Mexico, SE Asia), component sourcing, prototype-to-production pipeline, FCC/UL certification, logistics and warehousing, land and facility search, tariff strategy.</p></div>
 </div></div></section>
 <section><div class="container">
-<div class="section-label"></div>
+<div class="section-label">How it works</div>
 <h2>From first conversation to market presence</h2>
 <p class="subtitle">A structured engagement that adapts to your timeline and maturity.</p>
 <div class="process-steps">
@@ -275,8 +294,8 @@ section{padding:40px 0}
 <div class="advisor-card"><div class="advisor-avatar" style="overflow:hidden"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face&auto=format" alt="David Park" style="width:100%;height:100%;object-fit:cover"></div><h4>David Park</h4><div class="title">Partner, Software GTM</div><p>VP Sales at two $1B+ SaaS. Fortune 500 network. Built enterprise teams in US and APAC.</p></div>
 <div class="advisor-card"><div class="advisor-avatar" style="overflow:hidden"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&crop=face&auto=format" alt="Mia Zhang" style="width:100%;height:100%;object-fit:cover"></div><h4>Mia Zhang</h4><div class="title">Director, Ecosystem</div><p>Head of Partnerships at major US tech platform. Connected 200+ Chinese tech cos with US partners.</p></div>
 <div class="advisor-card"><div class="advisor-avatar" style="overflow:hidden"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&h=120&fit=crop&crop=face&auto=format" alt="Dr. Eric Chen" style="width:100%;height:100%;object-fit:cover"></div><h4>Dr. Eric Chen</h4><div class="title">Advisor, Deep Tech</div><p>PhD EE Stanford. CTO of 2 AI hardware startups (1 acquired, 1 IPO). Tech positioning & IP strategy.</p></div>
-</div><p>Built the firm. 10+ yrs at Alibaba, Xiaohongshu, Web3. <a href="#" onclick="showPage('pm-portfolio')" style="color:var(--accent);font-weight:500">View resume →</a></p></div>
-</div></section>
+</div><p>Built the firm. 10+ yrs at Alibaba, Xiaohongshu, Web3. <a href="/resume.html" style="color:var(--accent);font-weight:500">View resume →</a></p></div>
+</section>
 <section id="join" style="background:var(--bg-subtle)"><div class="container">
 <div class="section-label">Join our network</div>
 <h2>Become a Sequoia Bridge partner</h2>
@@ -302,6 +321,15 @@ section{padding:40px 0}
 </div>
 <p style="text-align:center;margin-top:32px;font-size:14px">Interested in joining? <a href="mailto:jchen822@hotmail.com" style="font-weight:500">Email us</a></p>
 </div></section>
+<section id="book" class="cta-section book-cta">
+<div class="container">
+<span id="contact"></span>
+<div class="section-label">30 minutes</div>
+<h2>预约 30 分钟 / Book a 30-min call</h2>
+<p class="subtitle">Tell us where you are between Pre-IPO preparation and a US market presence. We will use the half hour to map the gaps, the timeline, and whether we are the right fit.</p>
+<a class="btn btn-primary js-book" href="#book">预约 30 分钟 / Book a 30-min call</a>
+</div>
+</section>
 <footer>
 <div class="footer-grid">
 <div class="footer-col">
@@ -310,15 +338,15 @@ section{padding:40px 0}
 </div>
 <div class="footer-col">
 <h5>Services</h5>
-<a href="#">Pre-IPO Readiness</a>
-<a href="#">Market Entry</a>
-<a href="#">Ecosystem</a>
+<a href="#services">Pre-IPO Readiness</a>
+<a href="#services">Market Entry</a>
+<a href="#services">Ecosystem</a>
 </div>
 <div class="footer-col">
 <h5>Company</h5>
 <a href="#about">Team</a>
 <a href="#join">Join Us</a>
-<a href="#contact">Contact</a>
+<a href="#book">Contact</a>
 </div>
 <div class="footer-col">
 <h5>Contact</h5>
@@ -330,268 +358,49 @@ section{padding:40px 0}
 <p>&copy; 2025 Sequoia Bridge Advisory LLC. Built for the journey.</p>
 </div>
 </footer>
-<div id="page-pm-portfolio" class="page">
-
-
-<section class="hero"><div class="container">
-<img src="alisa-avatar.jpg" alt="Alisa Chen" style="width:72px;height:72px;border-radius:50%;margin-bottom:16px;object-fit:cover">
-<h1>Alisa Chen</h1>
-<p style="font-size:1.1rem;color:var(--accent);font-weight:500;margin-bottom:4px">Product Manager</p>
-<p>10+ years building products at Alibaba, Xiaohongshu, Web3, and AI startups</p>
-<div class="contact">
-<a href="mailto:jobchen786@gmail.com">📧 jobchen786@gmail.com</a>
-<span>📍 San Francisco Bay Area</span>
-<a href="https://sequoiabridge.us">🌐 sequoiabridge.us</a>
 </div>
-</div></section>
-
-<section><div class="container">
-<h2>Products I've Built &amp; Scaled</h2>
-<p class="subtitle">Each project spans strategy, execution, and measurable outcomes. From 0-to-1 to scaling at 300M+ MAU.</p>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">AI AGENT PAYMENTS · 2026</div>
-<h3>SnapLii AI — Agent Payment Infrastructure</h3>
-<div class="company">Growth Partner · Feb 2026 – Jul 2026</div>
-</div>
-<div class="project-body">
-<p>Defined product strategy for an AI Agent Payment infrastructure layer, positioning SnapLii's gift-card and payment network as controlled payment rails for agent-initiated transactions.</p>
-<p>Built A2M (Agent-to-Market) partnership and fundraising narratives, connecting payment infrastructure, gift-card inventory, and AI-agent commerce into one commercialization roadmap.</p>
-<div class="skills">
-<span class="badge">AI Agents</span><span class="badge">Payments</span><span class="badge">Product Strategy</span><span class="badge">Fundraising</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">AI SAAS · 2025</div>
-<h3>LEXI AI — AI Campaign Automation</h3>
-<div class="company">Growth Partner · Jun 2025 – Jan 2026</div>
-</div>
-<div class="project-body">
-<p>Built PLG acquisition and activation loops for AI SaaS products, including self-serve onboarding, referral mechanics, task-based incentives, and tiered reward structures.</p>
-<p>Scaled an AI campaign automation SaaS product to 13K paid users across 7 markets by combining self-serve onboarding, subscription packaging, and performance-oriented activation flows. Managed $10M+ ad budget with ROAS &gt; 2.5.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">13K</div><div class="l">Paid Users</div></div>
-<div class="m"><div class="v">7</div><div class="l">Markets</div></div>
-<div class="m"><div class="v">$10M+</div><div class="l">Ad Budget</div></div>
-<div class="m"><div class="v">&gt;2.5x</div><div class="l">ROAS</div></div>
-</div>
-<div class="skills">
-<span class="badge">PLG</span><span class="badge">AI SaaS</span><span class="badge">Growth Loops</span><span class="badge">Paid Ads</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">WEB3 · CRYPTO · 2023–2025</div>
-<h3>Coins.ph — Web3 Wallet &amp; $50M Exit</h3>
-<div class="company">Growth Product Manager · Aug 2023 – Jan 2025</div>
-</div>
-<div class="project-body">
-<p>Architected a Telegram mini-app PLG engine, acquiring 900K users in one month with near-zero CAC through referral loops, task-based incentives, and channel-native onboarding.</p>
-<p>Redesigned Launchpad / Launchpool activation flows, increasing first-time trading activation by 27% and impacting 100K+ new users.</p>
-<p>Built acquisition-to-activation funnel logic across onboarding, wallet funding, first trade, campaign participation, and reward claiming. Partnered with risk and operations teams to reduce reward abuse while preserving viral acquisition velocity.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">900K</div><div class="l">Users in 1 Month</div></div>
-<div class="m"><div class="v">+27%</div><div class="l">Trade Activation</div></div>
-<div class="m"><div class="v">$50M</div><div class="l">Exit</div></div>
-</div>
-<div class="skills">
-<span class="badge">Web3</span><span class="badge">Crypto Wallet</span><span class="badge">Telegram Mini-app</span><span class="badge">PLG</span><span class="badge">SEA Markets</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">SOCIAL COMMERCE · 2022–2023</div>
-<h3>Xiaohongshu (RED) — Creator Marketplace</h3>
-<div class="company">Strategic Product Manager · Jan 2022 – Jun 2023</div>
-</div>
-<div class="project-body">
-<p>Built user lifecycle analysis framework across publishing, likes, saves, comments, and retention, identifying early content creation as a key driver of 60-day creator retention.</p>
-<p>Translated lifecycle insights into onboarding and reactivation strategy across 6+ cohorts, helping product and operations teams prioritize behaviors that increased creator-audience engagement.</p>
-<p>Designed local-services growth strategy across top 20 cities by mapping content supply, user intent, category demand, and advertiser conversion opportunities. Improved marketplace supply efficiency by standardizing creator qualification, pricing, and campaign participation workflows.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">300M</div><div class="l">MAU</div></div>
-<div class="m"><div class="v">200K+</div><div class="l">Creators</div></div>
-<div class="m"><div class="v">20</div><div class="l">Cities</div></div>
-</div>
-<div class="skills">
-<span class="badge">Marketplace</span><span class="badge">Creator Economy</span><span class="badge">Lifecycle</span><span class="badge">Local Services</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">FOOD DELIVERY · 2019–2022</div>
-<h3>Ele.me (Alibaba) — Membership &amp; Growth</h3>
-<div class="company">Senior Product Manager · Oct 2019 – Jan 2022</div>
-</div>
-<div class="project-body">
-<p>Doubled paid membership conversion in three months by redesigning a coupon-heavy paid membership into a freemium loyalty program with progressive benefit unlocks and cross-platform loyalty integration.</p>
-<p>Launched a map-based food-ordering mini-program from 0 to 1, integrating restaurant delivery and local-services checkout into map POI cards and generating 4M daily page views.</p>
-<p>Expanded the student user segment from 1M to 28M by replacing manual campus verification with data-driven eligibility tagging and campus ambassador growth loops.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">2x</div><div class="l">Member Conversion</div></div>
-<div class="m"><div class="v">4M</div><div class="l">DAU (Mini-program)</div></div>
-<div class="m"><div class="v">1M→28M</div><div class="l">Student Users</div></div>
-</div>
-<div class="skills">
-<span class="badge">Growth</span><span class="badge">Membership</span><span class="badge">Loyalty</span><span class="badge">Mini-program</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">FINTECH · 2016–2019</div>
-<h3>Citibank — Digital Banking &amp; DevOps</h3>
-<div class="company">Product Owner, APAC Digital Banking · Sep 2016 – Oct 2019</div>
-</div>
-<div class="project-body">
-<p>Shipped facial-recognition account opening in Thailand by integrating government KYC database and ML-based liveness detection, increasing sign-up completion from 86% to 96%.</p>
-<p>Built private-cloud DevOps platform from 0 to 1 across 8 APAC countries with RBAC, elastic scaling, and root-cause analysis, saving $1M in annual operating costs.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">86%→96%</div><div class="l">Sign-up Completion</div></div>
-<div class="m"><div class="v">$1M</div><div class="l">Annual Savings</div></div>
-<div class="m"><div class="v">8</div><div class="l">Countries</div></div>
-</div>
-<div class="skills">
-<span class="badge">Digital Banking</span><span class="badge">KYC/AML</span><span class="badge">DevOps</span><span class="badge">APAC</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">AI SAAS · FOUNDER · 2022–2023</div>
-<h3>AI Ad Creative Platform</h3>
-<div class="company">Founder/PM · 2022–2023</div>
-</div>
-<div class="project-body">
-<p>Founded AI-powered ad creative platform. Built MVP in 6 weeks, validated with 20+ pilot clients. $1M+ ARR within 9 months. Acquired by larger ad tech company.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">$1M+</div><div class="l">ARR</div></div>
-<div class="m"><div class="v">6 wks</div><div class="l">MVP</div></div>
-</div>
-<div class="skills">
-<span class="badge">AI/ML</span><span class="badge">Ad Tech</span><span class="badge">0-to-1</span><span class="badge">Founder</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">E-COMMERCE · 2023</div>
-<h3>TikTok Shop — SEA Market Launch</h3>
-<div class="company">Product Lead · 2023</div>
-</div>
-<div class="project-body">
-<p>Led TikTok Shop expansion across 5 SEA markets. Defined local product strategy for Indonesia, Thailand, Vietnam. 200K+ merchants onboarded in first 6 months.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">5</div><div class="l">SEA Markets</div></div>
-<div class="m"><div class="v">200K+</div><div class="l">Merchants</div></div>
-</div>
-<div class="skills">
-<span class="badge">E-commerce</span><span class="badge">Market Launch</span><span class="badge">Localization</span><span class="badge">SEA</span>
-</div>
-</div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<div class="tag">OPERATIONS · 2024</div>
-<h3>Hsu's Ginseng — AI Sales &amp; US Market Entry</h3>
-<div class="company">Operator · 2024</div>
-</div>
-<div class="project-body">
-<p>Digitized family business with AI-powered sales pipeline. Automated outreach, CRM, and order processing. Drove 40% revenue increase through US market expansion strategies.</p>
-<div class="project-metrics">
-<div class="m"><div class="v">+40%</div><div class="l">Revenue</div></div>
-</div>
-<div class="skills">
-<span class="badge">AI Sales</span><span class="badge">CRM</span><span class="badge">US Market Entry</span><span class="badge">SMB</span>
-</div>
-</div>
-</div>
-</div></section>
-
-<section style="background:var(--bg-subtle)"><div class="container">
-<h2>Core Skills</h2>
-<p class="subtitle">What I bring to every product team</p>
-<div class="skills-grid">
-<div class="skill-card">
-<h4>Product Strategy</h4>
-<p>Roadmap planning, competitive analysis, user research, OKR frameworks, product-market fit validation across B2B/B2C/Web3.</p>
-</div>
-<div class="skill-card">
-<h4>Growth &amp; Metrics</h4>
-<p>Growth loops, funnel optimization, retention mechanics, cohort analysis, experimentation design. Led growth at 300M MAU scale.</p>
-</div>
-<div class="skill-card">
-<h4>Cross-Functional Leadership</h4>
-<p>Led teams of 15+ across engineering, design, data, marketing, and operations. Fluent in English, Mandarin, and cross-cultural collaboration.</p>
-</div>
-<div class="skill-card">
-<h4>Technical Depth</h4>
-<p>AI/ML product experience, web3/blockchain, growth engineering infrastructure. Can write SQL, Python, read code, and ship experiments independently.</p>
-</div>
-</div>
-</div></section>
-
-<section><div class="container" style="text-align:center">
-<h2 style="text-align:left">Education</h2>
-<div style="background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;margin-bottom:40px;text-align:left">
-<h4>University of Wisconsin</h4>
-<p>B.S. Mathematics · Computer Information Systems · New Media Design · 2010–2014</p>
-</div>
-
-<h2 style="text-align:left">Let's Talk</h2>
-<p class="subtitle">Open to PM roles in AI, e-commerce, fintech, or cross-border products.</p>
-<div class="contact-bar">
-<a href="mailto:jobchen786@gmail.com">📧 jobchen786@gmail.com</a>
-</div>
-</div></section>
-
-
-</div>
+<script src="site.config.js"></script>
 <script>
-function showPage(pageId) {
-  var pages = document.querySelectorAll('#page-home, #page-pm-portfolio');
-  for (var i = 0; i < pages.length; i++) {
-    pages[i].style.setProperty('display', 'none', 'important');
-  }
-  var target = document.getElementById('page-' + pageId);
-  if (target) {
-    target.style.setProperty('display', 'block', 'important');
-    window.scrollTo({top: 0});
-  }
+function bookingHref() {
+  var cfg = window.SEQUOIA_SITE || {};
+  var url = String(cfg.bookingUrl || "").replace(/^\s+|\s+$/g, "");
+  if (url) return url;
+  var email = String(cfg.bookingEmail || "").replace(/^\s+|\s+$/g, "");
+  if (!email) return "";
+  var subject = cfg.bookingSubject || "Book a 30-min call";
+  return "mailto:" + email + "?subject=" + encodeURIComponent(subject);
 }
 
-function showHome() {
-  var pages = document.querySelectorAll('#page-home, #page-pm-portfolio');
-  for (var i = 0; i < pages.length; i++) {
-    pages[i].style.setProperty('display', 'none', 'important');
+function applyBookingLinks() {
+  var url = bookingHref();
+  if (!url) return;
+  var external = /^(https?:)?\/\//i.test(url);
+  var nodes = document.querySelectorAll(".js-book");
+  for (var i = 0; i < nodes.length; i++) {
+    nodes[i].setAttribute("href", url);
+    if (external) {
+      nodes[i].setAttribute("target", "_blank");
+      nodes[i].setAttribute("rel", "noopener noreferrer");
+    } else {
+      nodes[i].removeAttribute("target");
+      nodes[i].removeAttribute("rel");
+    }
   }
-  document.getElementById('page-home').style.setProperty('display', 'block', 'important');
-  window.scrollTo({top: 0});
 }
 
 function toggleMobileNav() {
-  var nav = document.querySelector('.nav-links');
-  if (nav) nav.classList.toggle('nav-open');
+  var nav = document.getElementById("nav-links");
+  if (nav) nav.classList.toggle("show");
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  showHome();
-});
+function closeMobileNav() {
+  var nav = document.getElementById("nav-links");
+  if (nav) nav.classList.remove("show");
+}
+
+applyBookingLinks();
 </script>
+
 
 </body>
 </html>

@@ -1,0 +1,7 @@
+# https://sequoiabridge.us/
+User-agent: *
+Allow: /
+
+# LLM guidance: https://sequoiabridge.us/llms.txt
+
+Sitemap: https://sequoiabridge.us/sitemap.xml
